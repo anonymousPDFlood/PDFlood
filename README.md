@@ -126,6 +126,3 @@ To complete the analysis more quickly in chunks, perform the following steps:
 4. In the `costgrow` folder within the `comparison` folder within the `compareStorms` folder, compute WSE from the WSH output by CostGrow: `computeWSHfromWSE.R`
 5. In the `costgrow` folder within the `comparison` folder within the `compareStorms` folder, compute accuracy metrics of costgrow approach: `getPerformance.R`
 
-
-## Contact
-Please contact Samantha Roth at samantha.m.roth@dartmouth.edu with any reproduction issues.
