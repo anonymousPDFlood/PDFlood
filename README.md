@@ -13,7 +13,7 @@ For the visualizations, the required R packages are `RColorBrewer` (1.1-3), `ggm
 
 ## Reproduction
 To complete the analysis more quickly in chunks, perform the following steps:
-1. In all bash files, replace `/Users/f007f8t/Documents` with the location of your `probDnsclRealData` folder. Edit the bash files as necessary to schedule R scripts to be run on your local machine or the cluster of your choice. Examples are provided for a Mac laptop.
+1. In all bash files, replace `/Users/f007f8t/Documents` with the location of your `PDFlood` folder. Edit the bash files as necessary to schedule R scripts to be run on your local machine or the cluster of your choice. Examples are provided for a Mac laptop.
 2. Install the necessary R packages by running `installPackages.R` in the `code` folder.
 3. Call the bash file `runCodeBeforeQGIS.sh`. This should take less than a minute to execute. 
 4. Open QGIS.
