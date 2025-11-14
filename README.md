@@ -18,14 +18,14 @@ To complete the analysis more quickly in chunks, perform the following steps:
 3. Call the bash file `runCodeBeforeQGIS.sh`. This should take less than a minute to execute. 
 4. Open QGIS.
 5. Go to the processing toolbox and search for CostDistance, which will show up under Whitebox Tools.
-6. From the folder `~/probDnsclRealData/data`, select the raster `bin10mat5m.tif` as the 'Input Source File' and the raster `norristown_5m.tif` as the 'Input Cost (Friction) File.' Under 'Output Backlink File,' specify the name `backlink_QGIS.tif` and the folder `~/probDnsclRealData/data`. It does not matter whether the 'Open output file after running algorithm' boxes are checked. The output cost accumulation file does not need to be saved.
+6. From the folder `~/PDFlood/data`, select the raster `bin10mat5m.tif` as the 'Input Source File' and the raster `norristown_5m.tif` as the 'Input Cost (Friction) File.' Under 'Output Backlink File,' specify the name `backlink_QGIS.tif` and the folder `~/PDFlood/data`. It does not matter whether the 'Open output file after running algorithm' boxes are checked. The output cost accumulation file does not need to be saved.
 7. Hit 'Run.'
 8. Call the bash file `runCodeAfterQGIS.sh`. This should not take more than a couple minutes to execute.
 9. Call the bash file `runCodePlots.sh`. This should only take seconds to execute.
 10. Call the bash file `runCodeOtherStormsBeforeQGIS.sh`. This should not take more than a minute to execute.
-11. Repeat steps 4-7, in step 6 replacing `~/probDnsclRealData/data` with `~/probDnsclRealData/data/flood2014` when selecting `bin10mat5m.tif` as the 'Input Source File'. Also, replace `~/probDnsclRealData/data` with `~/probDnsclRealData/data/flood2014` when selecting the folder to save `backlink_QGIS.tif` to.
-12. Repeat steps 4-7, in step 6 replacing `~/probDnsclRealData/data` with `~/probDnsclRealData/data/flood2020` when selecting `bin10mat5m.tif` as the 'Input Source File'. Also, replace `~/probDnsclRealData/data` with `~/probDnsclRealData/data/flood2020` when selecting the folder to save `backlink_QGIS.tif` to.
-13. Repeat steps 4-7, in step 6 replacing `~/probDnsclRealData/data` with `~/probDnsclRealData/data/floodfuture` when selecting `bin10mat5m.tif` as the 'Input Source File'. Also, replace `~/probDnsclRealData/data` with `~/probDnsclRealData/data/floodfuture` when selecting the folder to save `backlink_QGIS.tif` to.
+11. Repeat steps 4-7, in step 6 replacing `~/PDFlood/data` with `~/PDFlood/data/flood2014` when selecting `bin10mat5m.tif` as the 'Input Source File'. Also, replace `~/PDFlood/data` with `~/PDFlood/data/flood2014` when selecting the folder to save `backlink_QGIS.tif` to.
+12. Repeat steps 4-7, in step 6 replacing `~/PDFlood/data` with `~/PDFlood/data/flood2020` when selecting `bin10mat5m.tif` as the 'Input Source File'. Also, replace `~/PDFlood/data` with `~/PDFlood/data/flood2020` when selecting the folder to save `backlink_QGIS.tif` to.
+13. Repeat steps 4-7, in step 6 replacing `~/PDFlood/data` with `~/PDFlood/data/floodfuture` when selecting `bin10mat5m.tif` as the 'Input Source File'. Also, replace `~/PDFlood/data` with `~/PDFlood/data/floodfuture` when selecting the folder to save `backlink_QGIS.tif` to.
 14. Call the bash file `runCodeOtherStormsAfterQGIS.sh`. This should not take more than a few minutes to execute.
 15. Compare generated figures in the `plots` folder to the figure with the same name in the `compareResults` folder.
 16. Run `reproduceTables3and5.R` and `reproduceTables4and6.R` in the `code` folder. Compare the output to the corresponding tables in the `compareResults` folder.
@@ -56,7 +56,7 @@ To complete the analysis more quickly in chunks, perform the following steps:
 **Find and get the predictive distribution of flooded (at low res) sources cells for dry (at low res) destination cells**
 1. In the `dataProcessing` folder, create a raster at each resolution where every location inside the low res flooded area =1 and every location outside the low res flooded area = NA: `costDistPrep_FloodArea.R`
 2. Look under the section 'GIS Analysis- Distance Tools' under the Whitebox Tools section of the processing toolbar in QGIS. Select 'Cost Distance.'
-3. Select the raster `bin10m.tif` as the 'Input Source File' and the raster `norristown_5m.tif` as the 'Input Cost (Friction) File.' Under 'Output Backlink File,' specify the name `backlink_QGIS.tif` and the folder `~/probDnsclRealData/data`.
+3. Select the raster `bin10m.tif` as the 'Input Source File' and the raster `norristown_5m.tif` as the 'Input Cost (Friction) File.' Under 'Output Backlink File,' specify the name `backlink_QGIS.tif` and the folder `~/PDFlood/data`.
 4. Hit 'Run.'
 5. In the `dataProcessing` folder, use the backlink file to find downscaled cell within the low res flooded area that maps to the destination outside the low res flooded area: `getFloodedCellFromBackLink.R`, then `getSourcesForDests.R`
 6. In the `evaluation` folder, get downscaled Xm flood projections at source cells: `dnsclSource.R`
@@ -92,7 +92,7 @@ To complete the analysis more quickly in chunks, perform the following steps:
 *Find and get the predictive distribution of flooded (at low res) sources cells for dry (at low res) destination cells*
 1. In the `dataProcessing` folder, create a raster at each resolution where every location inside the low res flooded area =1 and every location outside the low res flooded area = NA: `costDistPrep_FloodArea.R`
 2. Look under the section 'GIS Analysis- Distance Tools' under the Whitebox Tools section of the processing toolbar in QGIS. Select 'Cost Distance.'
-3. Select the raster `bin10m.tif` as the 'Input Source File' and the raster `norristown_5m.tif` as the 'Input Cost (Friction) File.' Under 'Output Backlink File,' specify the name `backlink_QGIS.tif` and the folder `~/probDnsclRealData/data`.
+3. Select the raster `bin10m.tif` as the 'Input Source File' and the raster `norristown_5m.tif` as the 'Input Cost (Friction) File.' Under 'Output Backlink File,' specify the name `backlink_QGIS.tif` and the folder `~/PDFlood/data`.
 4. Hit 'Run.'
 5. In the `dataProcessing` folder, use the backlink file to find downscaled cell within the low res flooded area that maps to the destination outside the low res flooded area: `getFloodedCellFromBackLink.R`, then `getSourcesForDests.R`
 6. In the `evaluation` folder, get downscaled Xm flood projections at source cells: `dnsclSource.R`
